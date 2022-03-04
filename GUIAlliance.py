@@ -6,7 +6,7 @@ import time
 
 pygame.init()
 res=(720,720)
-screen=pygame.display.set_mode(res)
+screen=pygame.display.set_mode(res) #creating the gui
 color=(0,0,0)
 #color_dark=(50,50,50)
 #color_light=(255,255,255)
@@ -24,6 +24,7 @@ path=[]
 while True:
     w=[0,40]
     h=[0,40]
+    #tile locations using pixels
     wi=[[0,120],[120,240],[240,360],[360,480],[480,600],[600,720],[0,120],[120,240],[240,360],[360,480],[480,600],[600,720],[0,120],[120,240],[240,360],[360,480],[480,600],[600,720],[0,120],[120,240],[240,360],[360,480],[480,600],[600,720],[0,120],[120,240],[240,360],[360,480],[480,600],[600,720],[0,120],[120,240],[240,360],[360,480],[480,600],[600,720]]
     hi=[[0,120],[0,120],[0,120],[0,120],[0,120],[0,120],[120,240],[120,240],[120,240],[120,240],[120,240],[120,240],[240,360],[240,360],[240,360],[240,360],[240,360],[240,360],[360,480],[360,480],[360,480],[360,480],[360,480],[360,480],[480,600],[480,600],[480,600],[480,600],[480,600],[480,600],[600,720],[600,720],[600,720],[600,720],[600,720],[600,720]]
     
@@ -35,7 +36,7 @@ while True:
             pygame.quit()
     
         #checks if a mouse is clicked
-        if ev.type == pygame.MOUSEBUTTONDOWN:
+        if ev.type == pygame.MOUSEBUTTONDOWN:# checking the clicks
             
             for i in range(t):
                 w=wi[i]
@@ -45,10 +46,10 @@ while True:
                 
     #print(click)
     # fills the screen with a color
-    screen.fill((255,0,0))
+    screen.fill((255,0,0))# making background color red
     mouse = pygame.mouse.get_pos()
     p=[]
-    for i in range(t):
+    for i in range(t):#checking the position of the mouse compared to each tile location and checking if it is clicked
      w=wi[i]
      h=hi[i]
      white=w1[i]
@@ -78,12 +79,12 @@ while True:
       
         textRect.center = (int((w[0]+w[1])/2),int((h[0]+h[1])/2))
         screen.blit(text,textRect)
-    font = pygame.font.Font('freesansbold.ttf', 14)
+    font = pygame.font.Font('freesansbold.ttf', 14)# adding the clicked and joining the tiles that are clicked in one string
     string=""
     for element in path:
         string+=element+", "
-    text = font.render(string, True,(255,255,255),(60,60,60))
-    file=open('path.txt','w')
+    text = font.render(string, True,(255,255,255),(60,60,60))# putting the string in the middle
+    file=open('path.txt','w')#writing to the file which bfs code will read
     file.write(','.join(path))
     file.close()
     textRect = text.get_rect()
@@ -91,6 +92,6 @@ while True:
     textRect.center = (int(360),int(360))
     screen.blit(text,textRect)
     
-    pygame.display.update()
+    pygame.display.update()# update gui(add the current changes)
 
 
