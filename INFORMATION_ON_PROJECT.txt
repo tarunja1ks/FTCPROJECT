@@ -1,0 +1,26 @@
+This is the github to our unique project for FTC Team Cyborg Daemons 19659
+Our unique code is mainly used in the autonomous period of the robot game.
+Reason we made this:
+  Initially in the first meets we would often crash into alliance robots due to lack of miscommunication 
+  and had a hard time making code on the spot to go with the alliances plan. Due to this, we made a primitive version of self driving to complete missions for our robot.
+ 
+ 
+ *****
+ Currently---------------------
+ *****
+ Our code is using and algorithim called BFS(Breadth First Search), which we have had experience with in competitive programming.
+ Currently, this self driving system can only go in perpiniduclar or linear movements meaning it can turn at a 70 angle or something similar. 
+ It is also very risky to use this as it isn't very advanced right now. It can still work for many missions and can navigate it's way through the map.
+ Here is an example video: https://drive.google.com/file/d/1jAU79Zr-MtuWbw-sfpwtUQUmlLvw6nCT/view?usp=sharing 
+ We also use a GUI for the alliance to input their path with a visual to make it more simple. 
+ 
+ 
+ *****
+ Potential-----------------
+ ****
+ Potential this program has is using AI to help with its selfdriving instead of BFS. It can use AI and a 
+ webcam to detect robots in realtime(with object dection) so both robots don't collide into each other. We can also try to use a method, which allows more 
+ effieicent paths that don't have to be going in 90,180,270,or 360 turn increments. 
+ 
+ 
+ 
